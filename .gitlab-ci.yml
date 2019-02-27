@@ -23,7 +23,7 @@ generate:html:
     - master
 
 pack:
-  stage: pre-pack
+  stage: pack
   variables:
     DOCKER_BUILD_ARG: '--squash'
   script:
