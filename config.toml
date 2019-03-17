@@ -1,80 +1,227 @@
-baseURL = "https://tremi.cz"
+# Site settings
+baseURL = "https://tremi.cz/"
 languageCode = "cs-cz"
 title = "TREMI s.r.o."
-theme = "hugo-lodi-theme"
+theme = "forty"
+
+# Enter your tracking code to enable Google Analytics
 googleAnalytics = "UA-54992660-1"
 
+# Enter your disqus shortname to enable comments
+disqusShortname = ""
+
 [params]
-    # head theme color
-    theme_color = ""
+  # You can use Markdown syntax for urls [text](//url.to/source)
+  # To create multi-line text in strings use the """example Text""" format
+  #
+  # All icons using Fontawesome's icon font. Look at fontawesome.io/icons
+  # for more icons. The icons are represented by their corresponding
+  # CSS class.
 
-    # head description
-    # This is what appears on the preview when posting this site on Facebook for example
-    description = ""
+  # Provide your metadata here.
+  name = "TREMI s.r.o."
+  description = "Výroba lékárenských signatur, vývoj softwarových aplikací, IT konzultace"
 
-    # head photo
-    # This is what appears on the preview when posting this site on Facebook for example
-    description_photo = "portfolio.jpg"
+  # Link custom assets relative to /static
+  custom_css = ['css/nav.css']
+  custom_js  = []
+  favicon    = "favicon.ico"
 
-    # favicon image (512x512px), place this in the static/img folder
-    favicon = "favicon.png"
+  # Just a custom image variable, please define it in .md files for content.
+  image = ""
 
-    # logo image (204x204px), place this in the static/img folder
-    # this appears on the top left of the navigation
+  # 404 error customization
+  [params.error404]
+    heading = "Stránka nebyla nalezena"
+    text = "Pokračujte prosím [na domovskou stránku](/)"
+
+  # Navigation Section
+  [params.navigation]
+    title = "TREMI s.r.o."
+    menu = "Menu"
+    # Optional logo as brand stored in img/
     logo = "logo.png"
 
-    # Email
-    email = "info@tremi.cz"
+    [[params.navigation.links]]
+      name = "Home"
+      url = "#"
 
-    # Facebook username
-    # facebook = ""
+#    [[params.navigation.links]]
+#      name = "Blogs"
+#      url = "blogs"
+#
+#    [[params.navigation.links]]
+#      name = "Generic Blog"
+#      url = "blogs/ipsum"
+#
+#    [[params.navigation.links]]
+#      name = "Elements"
+#      url = "elements.html"
 
-    # Twitter username
-    # twitter = "asdf"
+    # Add custom links here by uncommenting code below. To remove links just delete
+    # the [[params.navigation.links]] map associated with that link. Copy and paste
+    # code below if you need more links. Buttons work in the same way.
+    # [[params.navigation.links]]
+    #    name = "NameOfLink"
+    #    url = "UrlOfLink"
 
-    # Dribbble username
-    # dribbble = ""
+    # Button Style 1
+#    [[params.navigation.button1]]
+#      name = "Get Started"
+#      url = "blogs"
 
-    # LinkedIn URL
-    # linkedin = ""
+    # Button Style 2
+#    [[params.navigation.button2]]
+#      name = "Log In"
+#      url = "#"
 
-    # Medium username
-    # medium = "asdf"
 
-    # Github username
-    # github = ""
+  # Banner section
+  [params.banner]
+    # To change the background image on the homepage banner, replace 'banner.jpg' in
+    # the 'static/img' folder.
+    title = "Firma TREMI s.r.o."
+    #subtitle = "výrobce lékárenských signatur prostřednictvím portálu Waplékárna.cz](https://waplekarna.cz)."
+    buttonText = "Objednat signatury"
 
-    # Google Scholar URL
-    # googlescholar = ""
 
-[params.nav]
+  # Tiles Section
+  [params.tiles]
+    enable = false
+    # Display your showcases here.
+
+    [[params.tiles.showcase]]
+      title = "Aliquam"
+      subtitle = "Ipsum Dolor Sit Amet"
+      image = "pic01.jpg"
+      url = "blogs/aliquam"
+
+    [[params.tiles.showcase]]
+      title = "Tempus"
+      subtitle = "Feugiat Amet Tempus"
+      image = "pic02.jpg"
+      url = "blogs/tempus"
+
+    [[params.tiles.showcase]]
+      title = "Magna"
+      subtitle = "Lorem Etiam Nullam"
+      image = "pic03.jpg"
+      url = "blogs/magna"
+
+    [[params.tiles.showcase]]
+      title = "Ipsum"
+      subtitle = "Nisl Sed Aliquam"
+      image = "pic04.jpg"
+      url = "blogs/ipsum"
+
+    [[params.tiles.showcase]]
+      title = "Consequat"
+      subtitle = "Ipsum Dolor Sit Amet"
+      image = "pic05.jpg"
+      url = "blogs/ipsum"
+
+    [[params.tiles.showcase]]
+      title = "Etiam"
+      subtitle = "Feugiat Amet Tempus"
+      image = "pic06.jpg"
+      url = "blogs/ipsum"
+    # You can make more showcases by copy and pasting the code above
+
+  [params.blog]
+    # All blogs defined in their own files. You can find example blogs
+    # at 'exampleSite/content/blogs'. Copy the 'blogs' folder into the 'content' directory
+    # at the root of this Hugo site.
+    # For more informtion take a look at the README.
+    # To add more blogs just copy and paste the code.
+
+  # Section Type Two
+  [params.two]
     enable = true
+    title = "Massa libero"
+    subtitle = """Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
+    Mauris aliquet magna magna sed nunc rhoncus pharetra.
+    Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
+    Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero.
+    Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus."""
+    buttonText = "Get Started"
+    url = "blogs"
 
-[params.hero]
+
+  # Contact section
+  [params.contact]
     enable = true
+    buttonSend = "Odeslat zprávu"
+    buttonClear = "Vyprázdnit"
 
-    # Place this image in the static/img folder
-    avatar = "avatar.jpg"
-    subtitle = "Hi! I'm Juan, a front-end developer from Manila."
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 1000 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - set your email address under 'email' below and uncomment
+    # - upload the generated site to your server
+    # - send a dummy email yourself to confirm your account
+    # - click the confirm link in the email from www.formspree.io
+    # - you're done. Happy mailing!
+    # formEmail = "example@domain.com"
 
-    # Each element in this array makes a new <p> tag
-    # You can write this text in markdown
-    hero_right = [
-    "**This is a bold paragraph** and it's amazing.",
-    "This is my [GitHub](https://github.com/xaviablaza). It's pretty cool.",
-    "I also do a lot of coding if you didn't already know.",
-    "I study at XYZ University and I expect to graduate in 2050.",
-    "Please enjoy the rest of my website."]
+    # Contact Section
+    # You can add multiple emails, phone numbers, or addresses
+    # by copying the corresponding map with frontmatter code.
+    [[params.contact.email]]
+    title = "E-mail"
+    email = "contact@tremi.cz"
 
-[params.process]
+    [[params.contact.phone]]
+    title = "Telefon"
+    phone = "+420 608 151 632"
+    phoneHref = "+420608151632"
+
+    [[params.contact.phone]]
+    title = "Fax"
+    phone = "+420 485 100 448"
+    phoneHref = "+420485100448"
+
+    [[params.contact.address]]
+    title = "Fakturační adresa"
+    name = "TREMI s.r.o."
+    street = "Tř. 1. máje 97/25"
+    city = "Liberec"
+    zip = "460 02"
+
+  # Footer section
+  [params.footer]
     enable = true
-    title = "My Process"
-    subtitle = "Full Process Design"
+    copyright = "TREMI s.r.o. 2019"
 
-[params.case_studies]
-    enable = true
-    title = "Case Studies"
-    subtitle = "Selected Works"
+#    # Uses font awesome icons
+#    [[params.footer.social]]
+#      icon = "fa-twitter"
+#      url= "https://www.twitter.com"
+#      label = "Twitter"
 
-[params.footer]
-    enable = true
+#    [[params.footer.social]]
+#      icon = "fa-facebook"
+#      url= "https://www.facebook.com"
+#      label = "Facebook"
+
+#    [[params.footer.social]]
+#      icon = "fa-instagram"
+#      url= "https://www.instagram.com"
+#      label = "Instagram"
+
+#    [[params.footer.social]]
+#      icon = "fa-github"
+#      url= "https://www.github.com"
+#      label = "GitHub"
+
+#    [[params.footer.social]]
+#      icon = "fa-linkedin"
+#      url= "https://www.linkedin.com"
+#      label = "LinkedIn"
+
+#    [[params.footer.quicklinks]]
+#      text = "Design: "
+#      url= "https://www.html5up.net"
+#      alt = "HTML5 UP"
