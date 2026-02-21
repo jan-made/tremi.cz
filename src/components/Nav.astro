@@ -1,0 +1,36 @@
+---
+interface NavLink {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  links?: NavLink[];
+}
+
+const { links = [] } = Astro.props;
+
+const defaultLinks: NavLink[] = [
+  { name: 'Home', url: '/' },
+  { name: 'Prodej zboží', url: '/prodej-zbozi' },
+];
+
+const navLinks = links.length > 0 ? links : defaultLinks;
+---
+
+<!-- Header -->
+<header id="header">
+  <a href="/" class="logo"><img src="/img/logo.png" alt="TREMI s.r.o." /></a>
+  <nav>
+    <a href="#menu">Menu</a>
+  </nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+  <ul class="links">
+    {navLinks.map(link => (
+      <li><a href={link.url}>{link.name}</a></li>
+    ))}
+  </ul>
+</nav>

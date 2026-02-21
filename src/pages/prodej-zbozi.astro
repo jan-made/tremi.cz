@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Prodej zboží &middot; TREMI s.r.o.">
+  <Nav />
+
+  <!-- Main -->
+  <div id="main" class="alt">
+    <!-- One -->
+    <section id="one">
+      <div class="inner">
+        <header class="major">
+          <h1>Prodej zboží</h1>
+        </header>
+        <p>
+          Nabízíme zboží pro tiskárny Zebra a tiskárny účtenek, zboží je možné objednat emailem
+          <a href="mailto:objednavky@tremi.cz">objednavky@tremi.cz</a>.
+        </p>
+        <p>
+          Etikety 32 x 25 mm, barva bílá, 1 kotouč = 3000 etiket.
+        </p>
+        <p>
+          <img src="/img/prodej-zbozi/etikety_zebra1.jpg" alt="Etikety 32 x 25 mm, barva bílá, 1 kotouč = 3000 etiket" />
+        </p>
+        <p>
+          Termotransférové pásky 33mm x 74 m WAX RIBBON pro tiskárny Zebra řady 2300. Délka osičky je 11 cm.
+        </p>
+        <p>
+          <img src="/img/prodej-zbozi/etikety_zebra2.jpg" alt="Termotransférové pásky 33mm x 74 m WAX RIBBON pro tiskárny Zebra řady 2300" />
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <Footer />
+</BaseLayout>

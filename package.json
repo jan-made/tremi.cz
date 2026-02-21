@@ -1,0 +1,15 @@
+{
+  "name": "tremi-cz",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "TREMI s.r.o. website built with Astro",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.17.1"
+  }
+}
