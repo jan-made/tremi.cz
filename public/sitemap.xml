@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://tremi.cz/prodej-zbozi/</loc>
+    <lastmod>2017-10-31T22:27:21-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tremi.cz/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tremi.cz/</loc>
+    <lastmod>2017-10-31T22:27:21-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tremi.cz/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
