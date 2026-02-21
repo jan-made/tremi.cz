@@ -1,0 +1,66 @@
+---
+const formEmail = 'contact@tremi.cz';
+---
+
+<!-- Contact -->
+<section id="contact">
+  <div class="inner">
+    <section>
+      <form method="post" action={`https://formspree.io/${formEmail}`}>
+        <div class="field half first">
+          <label for="name">Jméno</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="field half">
+          <label for="email">E-mail</label>
+          <input type="text" name="email" id="email" />
+        </div>
+        <div class="field">
+          <label for="message">Zpráva</label>
+          <textarea name="message" id="message" rows="6"></textarea>
+        </div>
+        <ul class="actions">
+          <li><input type="submit" value="Odeslat zprávu" class="special" /></li>
+          <li><input type="reset" value="Vyprázdnit" /></li>
+        </ul>
+      </form>
+    </section>
+    <section class="split">
+      <section>
+        <div class="contact-method">
+          <span class="icon alt fa-envelope"></span>
+          <h3>E-mail</h3>
+          <a href="mailto:contact@tremi.cz">contact@tremi.cz</a>
+        </div>
+      </section>
+      <section>
+        <div class="contact-method">
+          <span class="icon alt fa-phone"></span>
+          <h3>Telefon</h3>
+          <a href="tel:+420608151632">+420 608 151 632</a>
+          <br><br>
+          <h3>Fax</h3>
+          <a href="tel:+420485100448">+420 485 100 448</a>
+          <br><br>
+        </div>
+      </section>
+      <section>
+        <div class="contact-method">
+          <span class="icon alt fa-id-card-o"></span>
+          <span>IČO: 60279214</span>
+          <br><span>DIČ: CZ60279214</span>
+        </div>
+      </section>
+      <section>
+        <div class="contact-method">
+          <span class="icon alt fa-home"></span>
+          <h3>Fakturační adresa</h3>
+          <span>TREMI s.r.o.<br />
+          Tř. 1. máje 97/25<br />
+          Liberec 460 02
+          </span>
+        </div>
+      </section>
+    </section>
+  </div>
+</section>

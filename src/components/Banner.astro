@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  buttonText?: string;
+  buttonUrl?: string;
+}
+
+const { title, buttonText = 'Objednat signatury', buttonUrl = 'https://waplekarna.cz' } = Astro.props;
+---
+
+<!-- Banner -->
+<section id="banner" class="major">
+  <div class="inner">
+    <header class="major">
+      <h1>{title}</h1>
+    </header>
+    <div class="content">
+      <p>výrobce lékárenských signatur prostřednictvím portálu <a href="https://waplekarna.cz">Waplékárna.cz</a>.</p>
+      <ul class="actions">
+        <li><a href={buttonUrl} class="button next">{buttonText}</a></li>
+      </ul>
+    </div>
+  </div>
+</section>

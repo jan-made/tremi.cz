@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Výroba lékárenských signatur, vývoj softwarových aplikací, IT konzultace' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content={description}>
+  <meta name="author" content="TREMI s.r.o.">
+  <meta name="generator" content={Astro.generator}>
+  <title>{title}</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+  <div id="wrapper">
+    <slot />
+  </div>
+
+  <script src="/js/jquery.min.js" is:inline></script>
+  <script src="/js/jquery.scrolly.min.js" is:inline></script>
+  <script src="/js/jquery.scrollex.min.js" is:inline></script>
+  <script src="/js/skel.min.js" is:inline></script>
+  <script src="/js/util.js" is:inline></script>
+  <script src="/js/main.js" is:inline></script>
+</body>
+</html>
