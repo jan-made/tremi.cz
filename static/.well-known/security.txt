@@ -1,4 +1,0 @@
-Contact: security@tremi.cz
-Encryption: https://jan.trejbal.land/key.asc
-Signature: https://tremi.cz/.well-known/security.txt.sig
-Preferred-Languages: en, cs
