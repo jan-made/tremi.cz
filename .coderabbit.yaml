@@ -42,14 +42,13 @@ reviews:
     - "!public/js/ie/**"
     - "!public/fonts/**"
     - "!public/**/*.{jpg,png,ico}"
-    - "!public/.well-known/security.txt.sig"
   path_instructions:
     - path: "src/**/*.astro"
       instructions: "Astro components and pages; Czech-language content. Check valid semantic HTML, alt text on images, correct internal links, and that page metadata (title, description) is set."
     - path: "public/.well-known/security.txt"
       instructions: "security.txt is signed; any change requires regenerating security.txt.sig and keeping Expires in the future."
     - path: ".github/workflows/**"
-      instructions: "GitHub Pages deploy workflow; keep permissions minimal and deploy only on pushes to the default branch."
+      instructions: "GitHub Pages deploy workflow; keep permissions minimal and deploy only on pushes to main or master (pull requests only build)."
 knowledge_base:
   code_guidelines:
     enabled: true
