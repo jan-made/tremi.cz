@@ -10,13 +10,13 @@ updates:
     directory: '/'
     schedule:
       interval: daily
-    target-branch: 'master'
+    target-branch: 'main'
     assignees:
       - 'trejjam'
 
   - package-ecosystem: bun
     directory: '/'
-    target-branch: 'master'
+    target-branch: 'main'
     versioning-strategy: increase
     schedule:
       interval: daily
