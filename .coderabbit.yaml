@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# Astro static site for TREMI s.r.o., built with Bun and deployed to GitHub Pages.
+language: en-US
+reviews:
+  profile: chill
+  high_level_summary: true
+  poem: false
+  in_progress_fortune: false
+  sequence_diagrams: false
+  review_status: true
+  collapse_walkthrough: true
+  enable_prompt_for_ai_agents: true
+  abort_on_close: true
+  auto_review:
+    enabled: true
+    drafts: true
+    auto_incremental_review: true
+    ignore_usernames:
+      - dependabot[bot]
+  finishing_touches:
+    autofix:
+      enabled: true
+    fix_ci:
+      enabled: true
+    resolve_merge_conflict:
+      enabled: true
+    unit_tests:
+      enabled: true
+    simplify:
+      enabled: true
+  pre_merge_checks:
+    title:
+      mode: warning
+    description:
+      mode: warning
+  path_filters:
+    - "!bun.lock"
+    - "!dist/**"
+    - "!.astro/**"
+    - "!public/**/*.min.js"
+    - "!public/**/*.min.css"
+    - "!public/js/ie/**"
+    - "!public/fonts/**"
+    - "!public/**/*.{jpg,png,ico}"
+    - "!public/.well-known/security.txt.sig"
+  path_instructions:
+    - path: "src/**/*.astro"
+      instructions: "Astro components and pages; Czech-language content. Check valid semantic HTML, alt text on images, correct internal links, and that page metadata (title, description) is set."
+    - path: "public/.well-known/security.txt"
+      instructions: "security.txt is signed; any change requires regenerating security.txt.sig and keeping Expires in the future."
+    - path: ".github/workflows/**"
+      instructions: "GitHub Pages deploy workflow; keep permissions minimal and deploy only on pushes to the default branch."
+knowledge_base:
+  code_guidelines:
+    enabled: true
+chat:
+  auto_reply: true
