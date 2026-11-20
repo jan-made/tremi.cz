@@ -1,0 +1,47 @@
+# PR-Agent settings for this repository. PR-Agent reads this file from the
+# default branch (main).
+# Options: https://github.com/The-PR-Agent/pr-agent/blob/v0.50.0/pr_agent/settings/configuration.toml
+
+[github_app]
+# Review draft pull requests too, and run /describe and /review again after each push by a person.
+# The PR-Agent host skips pull requests and pushes from bot accounts.
+feedback_on_draft_pr = true
+handle_push_trigger = true
+
+[pr_reviewer]
+num_max_findings = 5
+extra_instructions = """\
+Repository rules. Check every rule in each area the diff touches. A changed line that breaks one is a finding, even when the code runs.
+
+Pages (`src/pages/`, `src/components/`, `src/layouts/`):
+- Visible text and `alt` text are Czech; every `<img>` has a descriptive `alt`.
+- A new page uses `BaseLayout` with a `title` ending in `· TREMI s.r.o.` and a `description` prop.
+- A new page other than an error page has an entry in `defaultLinks` in `Nav.astro` in the same PR.
+- Phone and fax numbers appear in both `About.astro` and `Contact.astro`; a change updates both.
+- `BaseLayout.astro` loads scripts with `is:inline` in this order: jQuery, scrolly, scrollex, skel, `util.js`, `main.js`.
+
+Static assets (`public/`):
+- A file renamed or removed in this PR has its `src/` references updated in the same diff, or the PR description says none exist.
+- An edit to `.well-known/security.txt` adds or updates an `Expires` date in the future (RFC 9116) and regenerates `security.txt.sig` in the same PR.
+
+Build and deploy (`package.json`, `astro.config.mjs`, `.github/workflows/build-and-deploy.yml`):
+- Flag a new `package-lock.json` or `pnpm-lock.yaml`: dependencies are managed with Bun.
+- Flag an `output` other than `'static'` or a server adapter in `astro.config.mjs`: GitHub Pages serves only the built `dist/`.
+- The `deploy` job runs only on push to `main` or `master`; pull requests only build. Workflow permissions stay `contents: read`, `pages: write` and `id-token: write`.
+"""
+
+[pr_code_suggestions]
+# Publish only suggestions scored 5 or higher (0-10).
+suggestions_score_threshold = 5
+# Drop a suggestion whose score could not be computed; the default 7 would publish it.
+score_on_reflection_failure = 4
+extra_instructions = "Prefer existing project helpers and patterns over new abstractions. Do not suggest edits to the generated signature `public/.well-known/security.txt.sig`."
+
+[ignore]
+# Generated code and lock files. Replaces the default list; keep vendor/** first.
+glob = [
+    "vendor/**",
+    "**/*.min.js",
+    "**/*.min.css",
+    "public/js/ie/**",
+]
